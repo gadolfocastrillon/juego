@@ -14,29 +14,25 @@ class Objeto:
 	def cargar_imagen(self,ruta): 
 		self.icon_image = ruta
 
-#Arma hereda la clase objeto y crea un nuevo objeto llamado arma 
-#esta arma tendra un daño base y un costo para ser comprada
-class Arma(Objeto): 
-	"""
-	def __init__(self,nombre, desc, dano,costo):
+class Comida(Objeto): 
+	def __init__(self,nombre,desc,curacion,costo):
 		Objeto.__init__(self,nombre,desc)
-		self.dano = dano
-		self.costo = costo 
-	"""
-	def __init__(self,carac = ["Default","None",10,100]):
-		Objeto.__init__(self,carac[0],carac[1])
-		self.dano = carac[2]
-		self.costo = carac[3]
+		self.curacion = curacion
+		self.costo = costo
 
-	def atributos(self): 
-		print(self.nombre)
-		print(self.desc)
-		print("Atributos: ")
-		print(".Daño: ",self.dano)
-		print(".Precio: ",self.costo)
+	def usar_comida(self,personaje):
+		if personaje.vida < personaje.vida_maxima: 
+			if personaje.vida + self.curacion <= personaje.vida_maxima: 
+				personaje.vida = personaje.vida + self.curacion
+				return "elemento usado"
+			else: 
+				personaje.vida = personaje.vida_maxima
+				return "elemento usado"
+		else: 
+			print("Tienes toda la vida al maximo")
+			return "elemento no usado"
 
-	def dano_cuerpo(self): 
-		return self.dano
+
 
 
 class Personaje:
@@ -45,6 +41,7 @@ class Personaje:
 		self.nombre = nombre 
 		self.fuerza = fuerza
 		self.vida = vida
+		self.vida_maxima = 100
 	"""
 	def __init__(self,carac = ["Default",10,10,100]):
 		self.nombre = carac[0]
@@ -75,6 +72,29 @@ class Personaje:
 			print("Vida de", enemigo.nombre, "es", enemigo.vida)
 		else: 
 			enemigo.morir()
+#Arma hereda la clase objeto y crea un nuevo objeto llamado arma 
+#esta arma tendra un daño base y un costo para ser comprada
+class Arma(Objeto): 
+	"""
+	def __init__(self,nombre, desc, dano,costo):
+		Objeto.__init__(self,nombre,desc)
+		self.dano = dano
+		self.costo = costo 
+	"""
+	def __init__(self,carac = ["Default","None",10,100]):
+		Objeto.__init__(self,carac[0],carac[1])
+		self.dano = carac[2]
+		self.costo = carac[3]
+
+	def atributos(self): 
+		print(self.nombre)
+		print(self.desc)
+		print("Atributos: ")
+		print(".Daño: ",self.dano)
+		print(".Precio: ",self.costo)
+
+	def dano_cuerpo(self): 
+		return self.dano
 
 class Personaje_1(Personaje,Arma):
 	"""
@@ -111,3 +131,25 @@ class Personaje_1(Personaje,Arma):
 			print("Vida de ", enemigo.nombre, " es ", enemigo.vida)
 		else: 
 			enemigo.morir()
+
+
+
+class Inventario:
+	def __init__(self,elemento): 
+		self.elemento = elemento
+		self.inventario = []
+
+	def buy(self,elemento): 
+		for i in range(len(self.inventario)): 
+			if self.inventario[i] == 0: 
+				self.inventario[i] = elemento
+				break
+		return 0
+
+	def busqueda_objeto(self,elemento):
+		for x in range(len(self.inventario)):
+			if lista[x] == elemento:
+				return True
+			else: 
+				return False
+
