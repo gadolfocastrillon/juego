@@ -1,15 +1,11 @@
-﻿
-# Coloca el código de tu juego en este archivo.
-
-# Declara los personajes usados en el juego como en el ejemplo:
+﻿# Declara los personajes usados en el juego como en el ejemplo:
 define e = Character("Eileen")
 
 init python: 
-    # Importo la clase PlayerResources
-    from gestion_recursos import PlayerResources
-    player_resources = PlayerResources()  # Corrige el nombre a 'player_resources'
+    from gestion_recursos import PlayerResources # Importo la clase PlayerResources
+    player_resources = PlayerResources()
+    a = 1 
 
-# El juego comienza aquí.
 label start:
 
     scene bg room

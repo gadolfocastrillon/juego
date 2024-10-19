@@ -1,5 +1,3 @@
-#from renpy.exports import notify
-
 class PlayerResources: 
 	def __init__(self):
 		self.money = 100 #Dinero inicial
