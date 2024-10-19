@@ -1,0 +1,26 @@
+﻿I'm sorry, but an uncaught exception occurred.
+
+While running game code:
+  File "game/script.rpy", line 7, in script
+    init python:
+  File "game/script.rpy", line 9, in <module>
+    from scripts.gestion_recursos import PlayerResources
+ModuleNotFoundError: No module named 'scripts'
+
+-- Full Traceback ------------------------------------------------------------
+
+Full traceback:
+  File "game/script.rpy", line 7, in script
+    init python:
+  File "/home/gustavo/Escritorio/Apps/renpy-8.1.1-sdk/renpy/ast.py", line 821, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "/home/gustavo/Escritorio/Apps/renpy-8.1.1-sdk/renpy/python.py", line 1178, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/script.rpy", line 9, in <module>
+    from scripts.gestion_recursos import PlayerResources
+ModuleNotFoundError: No module named 'scripts'
+
+Linux-6.8.0-47-generic-x86_64-with-glibc2.39 x86_64
+Ren'Py 8.3.2.24090902
+sistema_de_pruebas_1 1.0
+Fri Oct 18 22:22:27 2024
