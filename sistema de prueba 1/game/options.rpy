@@ -13,7 +13,7 @@
 ##
 ## El _() que rodea la cadena de texto la señala como traducible.
 
-define config.name = _("sistema de prueba 1")
+define config.name = _("Death And Love")
 
 
 ## Determina si el título dado más arriba se muestra en el menú principal.
@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## Versión del juego.
 
-define config.version = "1.0"
+define config.version = "0.1"
 
 
 ## Texto situado en la pantalla 'Acerca de' del juego. Sitúa el texto entre
@@ -37,7 +37,7 @@ define gui.about = _p("""
 ## Nombre breve del juego para ejecutables y directorios en la distribución.
 ## Debe contener solo carácteres ASCII, sin espacios, comas o puntos y coma.
 
-define build.name = "sistemadeprueba1"
+define build.name = "UniversityAndLove"
 
 
 ## Sonidos y música ############################################################
@@ -144,7 +144,7 @@ default preferences.afm_time = 15
 ## Normalmente, este valor no debe ser modificado. Si lo es, debe ser siempre
 ## una cadena literal y no una expresión.
 
-define config.save_directory = "sistemadeprueba1-1729300986"
+define config.save_directory = "universityAndLove-1719422646"
 
 
 ## Icono #######################################################################
